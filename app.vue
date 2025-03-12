@@ -1,4 +1,4 @@
-// filepath: /workspaces/KaungRepisitory/nuxt-proj/app.vue
+         // filepath: /workspaces/KaungRepisitory/nuxt-proj/app.vue
 <template>
   <NuxtLayout />
 </template>

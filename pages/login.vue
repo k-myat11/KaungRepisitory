@@ -32,6 +32,9 @@
 <script setup lang="ts">
 import type { FormError} from '#ui/types'
 import { useRouter } from 'vue-router';
+definePageMeta({
+  layout: false // Disables the default layout
+});
 
 const props = defineProps({
     time : Number,
@@ -55,13 +58,9 @@ const correctPassword = '123';
 const router = useRouter();
 const onLogin = () => {
   if (state.email === correctEmail && state.password === correctPassword) {
-    router.push('/homePage'); // Redirect to the next page
+    router.push('/homePage');
   } else {
     alert('Invalid email or password');
   }
 };
 </script>
-
-<style scoped>
-/* Additional custom styles if needed */
-</style>

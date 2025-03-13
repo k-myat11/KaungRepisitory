@@ -1,16 +1,10 @@
-                                                                                                                                               // filepath: /workspaces/KaungRepisitory/nuxt-proj/la                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  youts/default.vue
+// filepath: /workspaces/KaungRepisitory/nuxt-proj/la youts/default.vue
 <template>
-  <div>
-    <NuxtPage />
-  </div>
+  <AppHeader></AppHeader>
+  <main class="app-content p-10 bg-gray-100">
+    <UContainer>
+      <slot />
+    </UContainer>
+  </main>
+  <AppFooter></AppFooter>
 </template>
-
-<script>
-export default {
-  name: 'DefaultLayout'
-}
-</script>
-
-<style scoped>
-/* Add your styles here */
-</style>

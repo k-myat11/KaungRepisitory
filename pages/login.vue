@@ -5,7 +5,7 @@
       <template #header>
         <h1 class="text-3xl font-bold text-cyan-400 text-center">
           <UIcon name="i-heroicons-academic-cap" class="w-6 h-6 text-primary" />
-          カウン-ス
+          KAUNG & SU
         </h1>
       </template>
 

@@ -1,6 +1,6 @@
 <template>
     <header class="bg-gray-400 text-white p-4 flex">
-        <div class="w-5/6 flex flex-row items-center">
+        <div class="w-4/5 flex flex-row items-center">
             <!-- メニューボタン -->
             <UButton :padded="false" color="gray" variant="link" icon="i-heroicons-bars-4" @click="isOpen = true"
                 aria-label="Open menu" />
@@ -8,11 +8,11 @@
             <!-- アプリタイトル -->
             <h1 class="text-3xl font-bold text-white">
                 <UIcon name="i-heroicons-academic-cap" class="w-6 h-6 text-primary" />
-                KAUNG SU App
+                KAUNG & SU
             </h1>
 
             <!-- サイドメニュー -->
-            <USlideover v-model="isOpen" side="left" class="w-40">
+            <USlideover v-model="isOpen" side="left" class="w-60">
                 <div class="bg-gray-200 h-screen">
                     <div class="flex justify-start ">
                         <h1 class="font-bold text-3xl items-center justify-center">
@@ -35,7 +35,7 @@
                 <USeparator icon="i-simple-icons-nuxtdotjs" />
             </USlideover>
         </div>
-        <div class="w-1/6 flex items-center">
+        <div class="w-1/5 flex items-end justify-end">
             <UDropdown :items="items" :popper="{ placement: 'bottom-end' }"">
                 <UAvatar src=" https://github.com/benjamincanac.png" size="md" alt="Avatar" />
             </UDropdown>
@@ -69,9 +69,9 @@ const isOpen = ref(false);
 const isProfileOpen = ref(false);
 
 const links = [
-    { label: 'Login', to: '/login', icon: 'i-heroicons-window' },
     { label: 'Home', to: '/', icon: 'i-heroicons-window' },
-    { label: 'Next', to: '/next', icon: 'i-heroicons-window' }
+    { label: 'Salary Management', to: '/homePage', icon: 'i-heroicons-window' },
+    { label: 'Salary Detail Input', to: '/salaryInfoManagement', icon: 'i-heroicons-window' }
 ];
 
 const items = [

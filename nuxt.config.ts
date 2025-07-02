@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: 'SMS'
+      title: '円｜SM System'
     }
   }
 });

@@ -47,10 +47,12 @@
                                 </h1>
                             </div>
                             <div class="basis-1/5 flex items-end justify-end">
-                                <UInputMenu v-model="value" :items="items1" class="w-44" icon="i-heroicons-calendar-days" />
+                                <UInputMenu v-model="value" :items="items1" class="w-44"
+                                    icon="i-heroicons-calendar-days" />
                             </div>
                             <div class="basis-1/5 flex items-end justify-end">
-                                <UInputMenu v-model="value2" :items="items2" class=" w-44" icon="i-heroicons-calendar-days" />
+                                <UInputMenu v-model="value2" :items="items2" class=" w-44"
+                                    icon="i-heroicons-calendar-days" />
                             </div>
                         </div>
                         <Placeholder class="h-8" />
@@ -199,7 +201,7 @@ const chartOptions3 = ref({
         valueSuffix: '%'
     },
     subtitle: {
-        text:''
+        text: ''
     },
     plotOptions: {
         series: {

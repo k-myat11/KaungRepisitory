@@ -6,15 +6,21 @@
           Salary Detail
         </h1>
         <!-- Date Filter -->
-        <div class="flex flex-row justify-end">
-          <h3 class="mt-5">Filter By Date:</h3>
+        <div class="flex flex-row justify-end pr-4">
+          <h3 class="mt-5 mr-4">Filter By Date:</h3>
           <UInput v-model="selectedDate" type="month" placeholder="Filter by date (YYYY/MM)" class="mt-4 w-52" />
         </div>
       </template>
 
       <!-- Table Container with Fixed Height -->
       <div class="table-container">
-        <UTable :rows="filteredPaginatedRows" :columns="columns" />
+        <UTable :rows="filteredPaginatedRows" :columns="columns">
+          <template #cell-totalSalary="{ row }">
+            <td class="bg-red-200 font-semibold">
+              {{ row.totalSalary }}
+            </td>
+          </template>
+        </UTable>
       </div>
 
       <!-- Pagination -->
@@ -31,7 +37,7 @@ export default defineComponent({
     // Columns definition
     const columns = [
       { key: 'no', label: 'No' },
-      { key: 'date', label: 'Date' },
+      { key: 'date', label: 'Month' },
       { key: 'basicSalary', label: 'Basic Salary' },
       { key: 'tax', label: 'Tax' },
       { key: 'ot', label: 'OT' },

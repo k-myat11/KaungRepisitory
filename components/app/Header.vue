@@ -7,9 +7,11 @@
 
             <!-- アプリタイトル -->
             <h1 class="text-3xl font-bold text-white">
-                <UIcon name="i-heroicons-academic-cap" class="w-6 h-6 text-primary" />
-                Salary Management System
+                　Salary Management System
             </h1>
+            <div class="ml-6 text-lg font-mono">
+                {{ currentTime }}
+            </div>
 
             <!-- サイドメニュー -->
             <USlideover v-model="isOpen" side="left" class="w-60">
@@ -62,7 +64,7 @@
 
 <script setup lang="ts">
 import { Icon } from '#components';
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const isOpen = ref(false);
 // Control profile modal visibility
@@ -75,7 +77,33 @@ const links = [
 ];
 
 const items = [
-  [{ label: 'Profile', icon: 'i-heroicons-user', click: () => isProfileOpen.value = true }],
-  [{ label: 'Logout', icon: 'i-heroicons-arrow-left-on-rectangle', to: '/login' }]
+    [{ label: 'Profile', icon: 'i-heroicons-user', click: () => isProfileOpen.value = true }],
+    [{ label: 'Logout', icon: 'i-heroicons-arrow-left-on-rectangle', to: '/login' }]
 ];
+
+// 現在日時の表示と1分ごとの更新
+const currentTime = ref('');
+let timer: number | undefined;
+
+function updateTime() {
+    const now = new Date();
+    // 例: 2025-07-02 14:05
+    currentTime.value = now.toLocaleString('ja-JP', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    }).replace(/\//g, '-').replace(',', '');
+}
+
+onMounted(() => {
+    updateTime();
+    timer = window.setInterval(updateTime, 60000);
+});
+
+onUnmounted(() => {
+    if (timer) clearInterval(timer);
+});
 </script>

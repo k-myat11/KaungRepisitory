@@ -60,7 +60,7 @@ const onLogin = () => {
   if (state.email && state.password) {
     router.push('/homePage');
   } else {
-    alert('Invalid email OR password');
+    alert('Invalid EMAIL or PASSWORD');
   }
 };
 </script>

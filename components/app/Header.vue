@@ -8,7 +8,7 @@
             <!-- アプリタイトル -->
             <h1 class="text-3xl font-bold text-white">
                 <UIcon name="i-heroicons-academic-cap" class="w-6 h-6 text-primary" />
-                KAUNG & SU
+                Salary Management System
             </h1>
 
             <!-- サイドメニュー -->
@@ -69,7 +69,7 @@ const isOpen = ref(false);
 const isProfileOpen = ref(false);
 
 const links = [
-    { label: 'Home', to: '/', icon: 'i-heroicons-window' },
+    { label: 'Home', to: '/main', icon: 'i-heroicons-window' },
     { label: 'Salary Management', to: '/homePage', icon: 'i-heroicons-window' },
     { label: 'Salary Detail Input', to: '/salaryInfoManagement', icon: 'i-heroicons-window' }
 ];

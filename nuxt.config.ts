@@ -5,5 +5,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     'nuxt-highcharts',
-  ]
+  ],
+  app: {
+    head: {
+      title: 'SMS'
+    }
+  }
 });

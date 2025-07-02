@@ -63,7 +63,6 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '#components';
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const isOpen = ref(false);
